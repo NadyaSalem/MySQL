@@ -44,3 +44,10 @@ VALUE (1, 'Kevin', 22,	1), (2,	'Bob', 15, 3), (3, 'Steward', NULL, 2);
 SELECT * FROM minions.minions;
 
 TRUNCATE TABLE `minions`;
+
+ --- 5. Drop All Tables ---
+ 
+USE `minions`;
+ 
+DROP TABLE `minions` ;
+DROP TABLE `towns`; 
