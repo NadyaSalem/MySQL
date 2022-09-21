@@ -113,3 +113,52 @@ DROP PRIMARY KEY,
 ADD CONSTRAINT `pk_users`
 PRIMARY KEY `users`(`id`),
 MODIFY COLUMN  `username` VARCHAR(30) NOT NULL UNIQUE;
+
+
+ -- 11. Movies Database
+ 
+CREATE DATABASE `Movies`;
+
+USE `Movies`;
+
+CREATE TABLE `directors` (
+    `id` INT PRIMARY KEY AUTO_INCREMENT,
+    `director_name` VARCHAR(100) NOT NULL,
+    `notes` TEXT
+);
+
+INSERT INTO  `directors` (`director_name`)
+VALUES ('name1'), ('name2'), ('name3'), ('name4'), ('name5');
+
+CREATE TABLE `genres` (
+    `id` INT PRIMARY KEY AUTO_INCREMENT,
+    `genre_name` VARCHAR(100) NOT NULL,
+    `notes` TEXT
+);
+
+INSERT INTO  `genres` (`genre_name`)
+VALUES ('genres1'), ('genres2'), ('genres3'), ('genres4'), ('genres5');
+
+CREATE TABLE `categories` (
+    `id` INT PRIMARY KEY AUTO_INCREMENT,
+    `category_name` VARCHAR(100) NOT NULL,
+    `notes` TEXT
+);
+
+INSERT INTO  `categories` (`category_name`)
+VALUES ('category1'), ('category2'), ('category3'), ('category4'), ('category5');
+
+CREATE TABLE `movies` (
+    `id` INT PRIMARY KEY AUTO_INCREMENT,
+    `title` VARCHAR(100) NOT NULL,
+    `director_id` INT,
+    `copyright_year` INT,
+    `length` INT,
+    `genre_id` INT,
+    `category_id` INT,
+    `rating` DOUBLE,
+    `notes` TEXT
+);
+
+INSERT INTO  `movies` (`title`)
+VALUES ('title1'), ('title2'), ('title3'), ('title4'), ('title5');
