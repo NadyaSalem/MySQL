@@ -93,3 +93,8 @@ VALUES ('Nadya', '1234'),
 ('Valentin', 'sonic');
 
 
+ --8. Change Primary Key
+ 
+ALTER TABLE `users`
+DROP PRIMARY KEY,
+ADD PRIMARY KEY `pk_users` (`id`, `username`);
