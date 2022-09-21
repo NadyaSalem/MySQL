@@ -1,4 +1,4 @@
---- 1. Create Tables ---
+-- 1. Create Tables
 
 
 USE `minions`;
@@ -15,7 +15,7 @@ CREATE TABLE `towns` (
  );
  
  
- --- 2. Alter Minions Table ---
+ -- 2. Alter Minions Table
  
  
 SELECT * FROM minions.minions;
@@ -28,7 +28,7 @@ FOREIGN KEY (`town_id`)
 REFERENCES `towns` (`id`);
 
 
- --- 3. Insert Records in Both Tables ---
+ -- 3. Insert Records in Both Tables
  
  USE `minions`;
 
@@ -39,13 +39,13 @@ INSERT INTO `minions` (`id`, `name`, `age`, `town_id`)
 VALUE (1, 'Kevin', 22,	1), (2,	'Bob', 15, 3), (3, 'Steward', NULL, 2);
 
 
- --- 4. Truncate Table Minions ---
+ -- 4. Truncate Table Minions
  
 SELECT * FROM minions.minions;
 
 TRUNCATE TABLE `minions`;
 
- --- 5. Drop All Tables ---
+ -- 5. Drop All Tables
  
 USE `minions`;
  
