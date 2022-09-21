@@ -308,3 +308,9 @@ VALUES
 	('Georgi', 'Terziev', 'Ivanov',	'CEO', 2, '2007-12-09',	3000.00),        
 	('Peter', 'Pan', 'Pan',	'Intern', 3, '2016-08-28', 599.88);
         
+	
+   -- 14. Basic Select All Fields
+   
+SELECT * FROM `towns`;
+SELECT * FROM `departments`;
+SELECT * FROM `employees`;
