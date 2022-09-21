@@ -78,7 +78,7 @@ VALUES ('Nadya', 'f', DATE (now())),
  
  CREATE TABLE `users` (
     `id` INT PRIMARY KEY AUTO_INCREMENT,
-    `username` VARCHAR(30) UNIQUE NOT NULL,
+    `username` VARCHAR(30) NOT NULL,
     `password` VARCHAR(26) NOT NULL,
     `profile_picture` BLOB,
     `last_login_time` TIME,
@@ -104,3 +104,12 @@ ADD PRIMARY KEY `pk_users` (`id`, `username`);
  
 ALTER TABLE `users`
 MODIFY COLUMN `last_login_time` DATETIME DEFAULT NOW();
+
+
+ -- 10. Set Unique Field
+ 
+ALTER TABLE `users`
+DROP PRIMARY KEY,
+ADD CONSTRAINT `pk_users`
+PRIMARY KEY `users`(`id`),
+MODIFY COLUMN  `username` VARCHAR(30) NOT NULL UNIQUE;
