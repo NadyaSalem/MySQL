@@ -1,6 +1,5 @@
 -- 1. Create Tables
 
-
 USE `minions`;
 
 CREATE TABLE `minions` (
@@ -16,7 +15,6 @@ CREATE TABLE `towns` (
  
  
  -- 2. Alter Minions Table
- 
  
 SELECT * FROM minions.minions;
 
@@ -44,6 +42,7 @@ VALUE (1, 'Kevin', 22,	1), (2,	'Bob', 15, 3), (3, 'Steward', NULL, 2);
 SELECT * FROM minions.minions;
 
 TRUNCATE TABLE `minions`;
+
 
  -- 5. Drop All Tables
  
@@ -315,9 +314,10 @@ SELECT * FROM `towns`;
 SELECT * FROM `departments`;
 SELECT * FROM `employees`;
 
+
   -- 15. Basic Select All Fields and Order Them
   
-  SELECT * FROM `towns`
+ SELECT * FROM `towns`
 ORDER BY `name`;
 
 SELECT * FROM `departments`
@@ -327,4 +327,14 @@ SELECT * FROM `employees`
 ORDER BY `salary` DESC;
 
 
+ -- 16. Basic Select Some Fields
+ 
+SELECT `name` FROM `towns`
+ORDER BY `name`;
+
+SELECT `name` FROM `departments`
+ORDER BY `name`;
+
+SELECT `first_name`, `last_name`, `job_title`, `salary` FROM `employees`
+ORDER BY `salary` DESC;
 
