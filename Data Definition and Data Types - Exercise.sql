@@ -51,3 +51,24 @@ USE `minions`;
  
 DROP TABLE `minions` ;
 DROP TABLE `towns`; 
+
+
+ -- 6. Create Table People
+
+CREATE TABLE `people` (
+    `id` INT PRIMARY KEY AUTO_INCREMENT,
+    `name` VARCHAR(200) NOT NULL,
+    `picture` BLOB,
+    `height` DECIMAL(10 , 2),
+    `weight` DECIMAL(10 , 2),
+    `gender` ENUM('m', 'f') NOT NULL,
+    `birthdate` DATE NOT NULL,
+    `biography` TEXT
+);
+
+INSERT INTO `people` (`name`, `gender`, `birthdate`)
+VALUES ('Nadya', 'f', DATE (now())),
+('Lina', 'f', DATE (now())),
+('Lora', 'f', DATE (now())),
+('Polina', 'f', DATE (now())),
+('Valentin', 'm', DATE (now()));
