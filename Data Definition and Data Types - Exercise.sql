@@ -261,7 +261,7 @@ CREATE TABLE `addresses` (
     `address_text` VARCHAR(70),
     `town_id` INT,
     FOREIGN KEY (`town_id`)
-	REFERENCES `towns` (`id`)
+    REFERENCES `towns` (`id`)
 );
  
  CREATE TABLE `departments` (
@@ -280,21 +280,21 @@ CREATE TABLE `employees` (
 `salary` DECIMAL (7,3),
 `address_id` INT,
 FOREIGN KEY (`department_id`)
-	REFERENCES `departments` (`id`),
+REFERENCES `departments` (`id`),
 FOREIGN KEY (`address_id`)
-	REFERENCES `addresses` (`id`)
+REFERENCES `addresses` (`id`)
 );
 
 INSERT INTO `towns`(`name`)
 VALUES
-	('Sofia'), 
+    ('Sofia'), 
     ('Plovdiv'), 
     ('Varna'), 
     ('Burgas');
     
 INSERT INTO `departments`(`name`)
-	VALUES
-		('Engineering'), 
+VALUES
+	('Engineering'), 
         ('Sales'), 
         ('Marketing'),
         ('Software Development'),
