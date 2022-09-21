@@ -338,3 +338,12 @@ ORDER BY `name`;
 SELECT `first_name`, `last_name`, `job_title`, `salary` FROM `employees`
 ORDER BY `salary` DESC;
 
+
+ -- 17. Increase Employees Salary
+ 
+ USE `soft_uni`;
+
+UPDATE `employees`
+SET `salary` = `salary` * 1.1 WHERE `id` > 0; 
+
+SELECT `salary` FROM `employees`;
