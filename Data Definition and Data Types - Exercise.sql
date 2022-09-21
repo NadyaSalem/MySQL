@@ -98,3 +98,9 @@ VALUES ('Nadya', '1234'),
 ALTER TABLE `users`
 DROP PRIMARY KEY,
 ADD PRIMARY KEY `pk_users` (`id`, `username`);
+
+
+ -- 9. Set Default Value of a Field
+ 
+ALTER TABLE `users`
+MODIFY COLUMN `last_login_time` DATETIME DEFAULT NOW();
