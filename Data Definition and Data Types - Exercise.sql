@@ -72,3 +72,24 @@ VALUES ('Nadya', 'f', DATE (now())),
 ('Lora', 'f', DATE (now())),
 ('Polina', 'f', DATE (now())),
 ('Valentin', 'm', DATE (now()));
+
+
+ -- 7. Create Table Users
+ 
+ CREATE TABLE `users` (
+    `id` INT PRIMARY KEY AUTO_INCREMENT,
+    `username` VARCHAR(30) UNIQUE NOT NULL,
+    `password` VARCHAR(26) NOT NULL,
+    `profile_picture` BLOB,
+    `last_login_time` TIME,
+    `is_deleted` BOOLEAN
+);
+
+INSERT INTO `users` (`username`, `password`)
+VALUES ('Nadya', '1234'),
+('Lina', '5678'),
+('Lora', '5689'),
+('Polina', '5369'),
+('Valentin', 'sonic');
+
+
