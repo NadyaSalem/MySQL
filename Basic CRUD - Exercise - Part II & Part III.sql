@@ -18,3 +18,12 @@ LIMIT 30;
 
 SELECT `country_name`, `country_code`, IF ( `currency_code` = 'EUR', 'Euro', 'Not Euro') AS `currency_code`  FROM `countries`
 ORDER BY `country_name`;
+
+
+-- Part III – Queries for Diablo Database --
+
+
+-- 24.  All Diablo Characters 
+
+SELECT `name` FROM `characters`
+ORDER BY `name`;
