@@ -34,6 +34,29 @@ CREATE TABLE `employees`(
 `happiness_level` CHAR(1) NOT NULL
 );
 
+
+
+-- Section 2: Data Manipulation Language (DML) – 30 pts --
+
+-- 2.	Insert
+
+INSERT INTO `games` (`name`, `rating`, `budget`, `team_id`)
+SELECT LOWER(REVERSE(SUBSTR(`name`, 2))), `id`, `leader_id` * 1000, `id` FROM `teams` AS t
+WHERE t.`id` BETWEEN 1 AND 9;
+
+
+-- 3.	Update
+
+UPDATE `employees` AS e
+SET `salary` = `salary` + 1000
+WHERE `id` IN (SELECT `leader_id` FROM `teams`) AND e.`age` < 40 AND e.`salary` <= 5000;
+ 
+ 
+ -- 4.	Delete
+ 
+DELETE FROM `games`
+WHERE `id` NOT IN (SELECT `game_id` FROM `games_categories`) AND release_date IS NULL;
+
 CREATE TABLE `teams`(
 `id` INT PRIMARY KEY AUTO_INCREMENT,
 `name` VARCHAR(40) NOT NULL,
